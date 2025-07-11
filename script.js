@@ -151,7 +151,7 @@ async function summarizeText() {
     const response = await fetch("https://api-inference.huggingface.co/models/facebook/bart-large-cnn", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
