@@ -130,7 +130,9 @@ window.addEventListener("DOMContentLoaded", () => {
   i = 0;
   typeTitle();
 });
-
+function scrollToSummary() {
+  document.getElementById("summary-box").scrollIntoView({ behavior: "smooth" });
+}
 // ============ AI Summarizer =============
 async function summarizeText() {
   const content = document.getElementById("content").innerText.trim();
