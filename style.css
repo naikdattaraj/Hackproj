@@ -1,0 +1,249 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full-page background + centered layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #eaf4ff; /* soft blue like your screenshot */
+  color: darkslategray;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* White card container */
+.main-container {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading */
+#typing-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: royalblue;
+  letter-spacing: 0.1em;
+  user-select: none;
+  min-height: 3rem;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Button group */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.controls button {
+  background: royalblue;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(65, 105, 225, 0.3);
+  transition: background 0.25s, transform 0.2s;
+}
+
+.controls button:hover {
+  background: mediumblue;
+  transform: translateY(-2px);
+}
+
+/* Editable content */
+#content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  max-width: 850px;
+  width: 100%;
+  font-size: 1.125rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  min-height: 150px;
+  outline: none;
+  line-height: 1.7;
+  user-select: text;
+  overflow-wrap: break-word;
+  transition: background 0.3s, color 0.3s;
+}
+
+#content:focus {
+  outline: 3px solid royalblue;
+}
+
+/* Summary output */
+#summary-box {
+  max-width: 850px;
+  width: 100%;
+  margin-top: 25px;
+  background: #f0f8ff;
+  border-left: 6px solid royalblue;
+  border-radius: 8px;
+  padding: 15px 25px;
+  font-size: 1rem;
+  color: #002d6d;
+  box-shadow: 0 6px 12px rgba(65, 105, 225, 0.1);
+}
+
+#summary-box h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.summary-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.summary-controls button {
+  background: mediumblue;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.summary-controls button:hover {
+  background: royalblue;
+}
+
+/* Highlight line */
+#highlight-line {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 3.5rem;
+  background: rgba(65, 105, 225, 0.1);
+  pointer-events: none;
+  z-index: 9998;
+  border-radius: 8px 0 0 8px;
+  transition: top 0.1s ease-out;
+  mix-blend-mode: multiply;
+}
+
+/* Sticky notes container */
+#sticky-notes {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Draggable sticky notes */
+.sticky-note {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  background: #fffacd;
+  border: 1.5px solid khaki;
+  padding: 10px 15px;
+  min-height: 80px;
+  width: 200px;
+  border-radius: 10px;
+  resize: both;
+  font-size: 1rem;
+  font-family: inherit;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  cursor: move;
+  z-index: 10000;
+}
+
+.sticky-note:focus {
+  box-shadow: 0 0 10px 3px khaki;
+  outline: none;
+}
+
+/* Accessibility modes */
+#content.high-contrast {
+  background: black !important;
+  color: yellow !important;
+  font-weight: bold;
+  border: 2px solid yellow;
+}
+
+#content.large-font {
+  font-size: 1.5rem !important;
+  line-height: 2 !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Dyslexic&display=swap');
+#content.dyslexia-font {
+  font-family: 'Open Dyslexic', Arial, sans-serif !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 600 !important;
+}
+
+body.night-mode {
+  background: #121212;
+  color: gainsboro;
+}
+
+#content.night-mode {
+  background: #1e1e1e;
+  color: whitesmoke;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive for smaller devices */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 25px 15px;
+  }
+
+  #content,
+  #summary-box {
+    padding: 20px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .controls button {
+    width: 100%;
+    justify-content: center;
+  }
+}

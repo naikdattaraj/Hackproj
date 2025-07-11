@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AccessiLearn | Inclusive Education Tool</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Page container to center main content -->
+  <div class="main-container">
+    <header>
+      <h1 id="typing-title">AccessiLearn</h1>
+      <p class="subtitle">Empowering every student to learn — regardless of ability, environment, or device.</p>
+    </header>
+
+    <nav class="controls" aria-label="Accessibility tools">
+      <button onclick="toggleContrast()"><i class="fas fa-adjust"></i> Contrast</button>
+      <button onclick="toggleFontSize()"><i class="fas fa-text-height"></i> Font Size</button>
+      <button onclick="toggleDyslexiaFont()"><i class="fas fa-font"></i> Dyslexia Font</button>
+      <button onclick="readText()"><i class="fas fa-volume-up"></i> Read Aloud</button>
+      <button onclick="toggleNightMode()"><i class="fas fa-moon"></i> Night Mode</button>
+      <button onclick="addStickyNote()"><i class="fas fa-sticky-note"></i> Sticky Note</button>
+      <button onclick="summarizeText()"><i class="fas fa-lightbulb"></i> Summarize</button>
+    </nav>
+
+    <main>
+      <section id="content" contenteditable="true">
+        <h2>📘 Welcome to AccessiLearn</h2>
+        <p>
+          This is a sample content area. Paste any educational content here and use the tools above to make it accessible.
+        </p>
+      </section>
+
+      <div id="highlight-line" aria-hidden="true"></div>
+
+      <section id="summary-box" aria-label="Text Summary Output"></section>
+
+      <div id="summary-actions" class="summary-controls">
+        <button id="copySummaryBtn" onclick="copySummary()" style="display: none;">📋 Copy Summary</button>
+        <button id="readSummaryBtn" onclick="readSummary()" style="display: none;">🔊 Read Summary</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 <strong>AccessiLearn</strong> | Built with 💙 for Coders Club Hackathon</p>
+    </footer>
+  </div>
+
+  <!-- Draggable sticky notes float outside content area -->
+  <div id="sticky-notes" aria-label="Sticky Notes Section"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
