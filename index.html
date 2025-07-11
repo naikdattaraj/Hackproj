@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AccessiLearn | Inclusive Education Tool</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Page container to center main content -->
   <div class="main-container">
     <header>
       <h1 id="typing-title">AccessiLearn</h1>
@@ -16,30 +16,28 @@
     </header>
 
     <nav class="controls" aria-label="Accessibility tools">
-      <button onclick="toggleContrast()"><i class="fas fa-adjust"></i> Contrast</button>
-      <button onclick="toggleFontSize()"><i class="fas fa-text-height"></i> Font Size</button>
-      <button onclick="toggleDyslexiaFont()"><i class="fas fa-font"></i> Dyslexia Font</button>
-      <button onclick="readText()"><i class="fas fa-volume-up"></i> Read Aloud</button>
-      <button onclick="toggleNightMode()"><i class="fas fa-moon"></i> Night Mode</button>
-      <button onclick="addStickyNote()"><i class="fas fa-sticky-note"></i> Sticky Note</button>
-      <button onclick="summarizeText()"><i class="fas fa-lightbulb"></i> Summarize</button>
+      <button aria-label="Toggle High Contrast" onclick="toggleContrast()"><i class="fas fa-adjust"></i> Contrast</button>
+      <button aria-label="Adjust Font Size" onclick="toggleFontSize()"><i class="fas fa-text-height"></i> Font Size</button>
+      <button aria-label="Enable Dyslexia Font" onclick="toggleDyslexiaFont()"><i class="fas fa-font"></i> Dyslexia Font</button>
+      <button aria-label="Read Content Aloud" onclick="readText()"><i class="fas fa-volume-up"></i> Read Aloud</button>
+      <button aria-label="Toggle Dark Mode" onclick="toggleNightMode()"><i class="fas fa-moon"></i> Night Mode</button>
+      <button aria-label="Add Sticky Note" onclick="addStickyNote()"><i class="fas fa-sticky-note"></i> Sticky Note</button>
+      <button aria-label="Summarize Content" onclick="summarizeText()"><i class="fas fa-lightbulb"></i> Summarize</button>
     </nav>
 
-    <main>
-      <section id="content" contenteditable="true">
+    <main role="main">
+      <section id="content" contenteditable="true" aria-label="Editable Learning Content">
         <h2>📘 Welcome to AccessiLearn</h2>
-        <p>
-          This is a sample content area. Paste any educational content here and use the tools above to make it accessible.
-        </p>
+        <p>Paste any educational content here and use the tools above to make it accessible.</p>
       </section>
 
       <div id="highlight-line" aria-hidden="true"></div>
 
-      <section id="summary-box" aria-label="Text Summary Output"></section>
+      <section id="summary-box" aria-live="polite" aria-label="Text Summary Output"></section>
 
       <div id="summary-actions" class="summary-controls">
-        <button id="copySummaryBtn" onclick="copySummary()" style="display: none;">📋 Copy Summary</button>
-        <button id="readSummaryBtn" onclick="readSummary()" style="display: none;">🔊 Read Summary</button>
+        <button id="copySummaryBtn" onclick="copySummary()" style="display: none;" aria-label="Copy Summary">📋 Copy Summary</button>
+        <button id="readSummaryBtn" onclick="readSummary()" style="display: none;" aria-label="Read Summary Aloud">🔊 Read Summary</button>
       </div>
     </main>
 
@@ -48,8 +46,8 @@
     </footer>
   </div>
 
-  <!-- Draggable sticky notes float outside content area -->
   <div id="sticky-notes" aria-label="Sticky Notes Section"></div>
+  <div id="reading-line"></div>
 
   <script src="script.js"></script>
 </body>
