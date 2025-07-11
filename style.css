@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 
 /* Full-page background + centered layout */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-family: 'Inter', sans-serif;
   background: #eaf4ff; /* soft blue like your screenshot */
   color: darkslategray;
   min-height: 100vh;
@@ -15,7 +15,9 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
 /* White card container */
 .main-container {
   background: white;
