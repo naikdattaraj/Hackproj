@@ -172,6 +172,7 @@ async function summarizeText() {
     summaryBox.innerHTML = `<h3>🧠 Summary</h3><p>${summary}</p>`;
     document.getElementById("copySummaryBtn").style.display = "inline-block";
     document.getElementById("readSummaryBtn").style.display = "inline-block";
+    scrollToSummary(); 
 
   } catch (error) {
     summaryBox.innerHTML = `<p>❌ AI summarization failed: ${error.message}</p>`;
